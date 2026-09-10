@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Freigegebene Pfade fuer den FileProvider. Nur der app-private Download-Ordner und der Cache
+  sind sichtbar - kein Zugriff auf sonstige Dateisysteme.
+-->
+<paths>
+    <external-files-path
+        name="downloads"
+        path="Download/" />
+    <cache-path
+        name="webcache"
+        path="webcache/" />
+</paths>
