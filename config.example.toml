@@ -1,0 +1,51 @@
+# Qoder Creator - Configuration Example
+# Copy this file to config.toml and fill in your values.
+# config.toml is gitignored — never commit real credentials.
+
+[api]
+# Tempik — disposable email API
+# Self-host: https://github.com/hirotomasato/tempik
+# Or use the public instance below
+tempmail_base = "https://tempik.example.com/api"
+
+# Qoder endpoints
+qoder_base = "https://qoder.com"
+qoder_openapi = "https://openapi.qoder.sh"
+
+[signup]
+# Run browser in background (true) or visible (false)
+headless = true
+
+# Delay between accounts in seconds (+ random 0-5s added)
+delay = 5
+
+# Max retry per account on failure
+retry = 2
+
+# Concurrent accounts (1 = sequential, safe)
+concurrency = 1
+
+[proxy]
+# Mode: "none" | "file" | "env"
+#   none  = direct connection (your own IP)
+#   file  = load from proxies.txt
+#   env   = read from QODER_PROXY env var
+mode = "none"
+
+# Proxy list file (only used when mode = "file")
+# Format: ip:port:user:pass (one per line)
+pool_file = "proxies.txt"
+
+[output]
+# Where to save results
+data_dir = "data"
+
+# Output format: "jsonl" (recommended) or "json"
+format = "jsonl"
+
+[logging]
+# Log level: DEBUG | INFO | WARNING | ERROR
+level = "INFO"
+
+# Log file path
+file = "data/qoder.log"

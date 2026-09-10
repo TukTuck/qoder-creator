@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Bewusst minimal: nur Netzwerk + Netzstatus. Keine Telemetrie, keine Standort-/Kontaktdaten. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name=".ConsolePocketApp"
+        android:allowBackup="false"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ConsolePocket"
+        android:usesCleartextTraffic="false"
+        tools:targetApi="37">
+
+        <!--
+            GENAU EINE Activity, launchMode=singleTask:
+            - keine zusaetzlichen Activities/Tasks/Fenster (Anforderung A3)
+            - Custom Tabs und System-Picker laufen im Task dieser App und kehren hierher zurueck
+            - breite configChanges: kein Activity-Neuaufbau bei Rotation/Dark-Mode/Split-Screen,
+              dadurch kein Reload des WebView-Inhalts
+        -->
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation|screenSize|smallestScreenSize|screenLayout|keyboard|keyboardHidden|navigation|uiMode|density|fontScale|layoutDirection|locale|mcc|mnc|touchscreen"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:resizeableActivity="true"
+            android:supportsPictureInPicture="false"
+            android:windowSoftInputMode="adjustResize">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <!-- App-Shortcuts (Compute, Billing, Logs, GKE) oeffnen dieselbe Activity -->
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
+
+            <!-- Eigene Deep-Link-Action, wird von shortcuts.xml verwendet -->
+            <intent-filter>
+                <action android:name="app.consolepocket.action.OPEN_URL" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- Nur fuer in-app Downloads (CSV/PDF/Keys) - Oeffnen ist eine explizite Nutzeraktion -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+    <queries>
+        <!-- Nur um zu pruefen, ob ein Chrome/Custom-Tab-Provider verfuegbar ist (Engine-Fallback) -->
+        <intent>
+            <action android:name="android.support.customtabs.action.CustomTabsService" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https" />
+        </intent>
+    </queries>
+
+</manifest>
