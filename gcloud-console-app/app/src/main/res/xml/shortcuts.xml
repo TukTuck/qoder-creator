@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Statische App-Shortcuts (Long-Press auf das App-Icon).
+  Alle oeffnen DIESELBE Activity (singleTask) mit einer Ziel-URL als Extra -> kein zweiter Task,
+  kein neues Fenster. targetPackage muss der applicationId entsprechen (kein debug-Suffix!).
+-->
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_compute"
+        android:shortcutId="compute"
+        android:shortcutLongLabel="@string/shortcut_compute_long"
+        android:shortcutShortLabel="@string/shortcut_compute_short">
+        <intent
+            android:action="app.consolepocket.action.OPEN_URL"
+            android:targetClass="app.consolepocket.MainActivity"
+            android:targetPackage="app.consolepocket">
+            <extra
+                android:name="app.consolepocket.extra.URL"
+                android:value="https://console.cloud.google.com/compute/instances" />
+        </intent>
+    </shortcut>
+
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_billing"
+        android:shortcutId="billing"
+        android:shortcutLongLabel="@string/shortcut_billing_long"
+        android:shortcutShortLabel="@string/shortcut_billing_short">
+        <intent
+            android:action="app.consolepocket.action.OPEN_URL"
+            android:targetClass="app.consolepocket.MainActivity"
+            android:targetPackage="app.consolepocket">
+            <extra
+                android:name="app.consolepocket.extra.URL"
+                android:value="https://console.cloud.google.com/billing" />
+        </intent>
+    </shortcut>
+
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_logs"
+        android:shortcutId="logs"
+        android:shortcutLongLabel="@string/shortcut_logs_long"
+        android:shortcutShortLabel="@string/shortcut_logs_short">
+        <intent
+            android:action="app.consolepocket.action.OPEN_URL"
+            android:targetClass="app.consolepocket.MainActivity"
+            android:targetPackage="app.consolepocket">
+            <extra
+                android:name="app.consolepocket.extra.URL"
+                android:value="https://console.cloud.google.com/logs" />
+        </intent>
+    </shortcut>
+
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_gke"
+        android:shortcutId="gke"
+        android:shortcutLongLabel="@string/shortcut_gke_long"
+        android:shortcutShortLabel="@string/shortcut_gke_short">
+        <intent
+            android:action="app.consolepocket.action.OPEN_URL"
+            android:targetClass="app.consolepocket.MainActivity"
+            android:targetPackage="app.consolepocket">
+            <extra
+                android:name="app.consolepocket.extra.URL"
+                android:value="https://console.cloud.google.com/kubernetes/list" />
+        </intent>
+    </shortcut>
+
+</shortcuts>

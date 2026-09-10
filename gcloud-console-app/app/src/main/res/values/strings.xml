@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Console Pocket</string>
+
+    <!-- Browser -->
+    <string name="action_reload">Neu laden</string>
+    <string name="action_reload_no_cache">Neu laden (Cache umgehen)</string>
+    <string name="action_new_tab">Neuer In-App-Tab</string>
+    <string name="action_close_tab">Tab schließen</string>
+    <string name="action_settings">Einstellungen</string>
+    <string name="action_downloads">Downloads</string>
+    <string name="action_debug">Cache &amp; Messwerte</string>
+    <string name="action_back">Zurück</string>
+    <string name="action_forward">Vor</string>
+    <string name="action_share_url">URL kopieren</string>
+    <string name="action_open_custom_tab">Im sicheren Modus öffnen (Custom Tab)</string>
+    <string name="action_stop">Laden abbrechen</string>
+
+    <!-- Schnellzugriffe -->
+    <string name="quick_home">Dashboard</string>
+    <string name="quick_compute">Compute Engine</string>
+    <string name="quick_gke">Kubernetes Engine</string>
+    <string name="quick_logs">Logs Explorer</string>
+    <string name="quick_billing">Billing</string>
+    <string name="quick_iam">IAM</string>
+    <string name="quick_bigquery">BigQuery</string>
+    <string name="quick_storage">Cloud Storage</string>
+    <string name="quick_monitoring">Monitoring</string>
+    <string name="quick_shell">Cloud Shell</string>
+
+    <!-- Shortcuts (Long-Press auf das App-Icon) -->
+    <string name="shortcut_compute_short">Compute</string>
+    <string name="shortcut_compute_long">Compute Engine öffnen</string>
+    <string name="shortcut_billing_short">Billing</string>
+    <string name="shortcut_billing_long">Billing öffnen</string>
+    <string name="shortcut_logs_short">Logs</string>
+    <string name="shortcut_logs_long">Logs Explorer öffnen</string>
+    <string name="shortcut_gke_short">GKE</string>
+    <string name="shortcut_gke_long">Kubernetes Engine öffnen</string>
+
+    <!-- Zustände -->
+    <string name="state_loading">Console wird geladen …</string>
+    <string name="state_offline_title">Offline</string>
+    <string name="state_offline_body">Keine Verbindung. Gespeicherte UI-Bausteine werden weiterhin aus dem lokalen Cache geliefert.</string>
+    <string name="state_error_title">Seite konnte nicht geladen werden</string>
+    <string name="state_renderer_crash">Die Web-Ansicht wurde neu gestartet.</string>
+    <string name="state_login_blocked_title">Google blockiert die Anmeldung in der eingebetteten Ansicht</string>
+    <string name="state_login_blocked_body">Die Console-Anmeldung läuft über ein eingebettetes Chromium-Fenster, das Google für OAuth nicht zulässt. Wechsle in den sicheren Modus: Die Console läuft dann in einem Chrome Custom Tab im Task dieser App (Back-Taste kehrt hierher zurück), die Anmeldung funktioniert und du bleibst eingeloggt.</string>
+    <string name="state_login_blocked_primary">Sicheren Modus aktivieren</string>
+    <string name="state_login_blocked_secondary">Trotzdem hier bleiben</string>
+    <string name="state_old_webview_title">Chromium zu alt</string>
+    <string name="state_old_webview_body">Android System WebView ist älter als Version 120. Cache-Verhalten und Console-Funktionen können eingeschränkt sein. Bitte in den Systemeinstellungen aktualisieren.</string>
+
+    <!-- Externe Aktionen (nur mit expliziter Bestätigung) -->
+    <string name="external_confirm_title">App verlassen?</string>
+    <string name="external_confirm_body">Diese Aktion öffnet eine andere App (%1$s). Die Console bleibt in dieser App erhalten.</string>
+    <string name="external_confirm_ok">Andere App öffnen</string>
+    <string name="external_confirm_cancel">Abbrechen</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Einstellungen</string>
+    <string name="settings_engine_title">Engine</string>
+    <string name="settings_engine_auto">Automatisch (WebView mit Cache, Fallback Custom Tab)</string>
+    <string name="settings_engine_webview">Immer WebView (maximaler lokaler Cache)</string>
+    <string name="settings_engine_custom_tabs">Immer Custom Tab (policy-sicher, kein eigener Cache)</string>
+    <string name="settings_cache_title">Cache</string>
+    <string name="settings_cache_size">Cache-Größe</string>
+    <string name="settings_cache_clear">Cache leeren</string>
+    <string name="settings_cache_usage">Belegt: %1$s</string>
+    <string name="settings_rules_title">Request-Regeln</string>
+    <string name="settings_rules_mode">Regel-Modus</string>
+    <string name="settings_rules_mode_off">Aus (nichts abfangen)</string>
+    <string name="settings_rules_mode_log">Nur protokollieren</string>
+    <string name="settings_rules_mode_enforce">Anwenden (cachen + blocken)</string>
+    <string name="settings_display_title">Anzeige</string>
+    <string name="settings_dark_mode">Dunkles Design</string>
+    <string name="settings_dark_system">System</string>
+    <string name="settings_dark_on">An</string>
+    <string name="settings_dark_off">Aus</string>
+    <string name="settings_web_darkening">Web-Inhalte algorithmisch abdunkeln</string>
+    <string name="settings_text_zoom">Textgröße (%1$d %%)</string>
+    <string name="settings_images_off">Bilder nicht laden (Datensparmodus)</string>
+    <string name="settings_start_title">Start</string>
+    <string name="settings_start_url">Start-URL</string>
+    <string name="settings_links_in_app">Fremde Links in der App lassen</string>
+    <string name="settings_about_title">Über</string>
+    <string name="settings_about_body">Inoffizielle Wrapper-App für die Google Cloud Console. Kein Google-Produkt, keine Datenweitergabe an Dritte, keine Telemetrie.</string>
+
+    <!-- Downloads -->
+    <string name="downloads_title">Downloads</string>
+    <string name="downloads_empty">Keine Downloads. Exporte aus der Console (CSV, PDF, Schlüssel) landen hier.</string>
+    <string name="downloads_open">Öffnen</string>
+    <string name="downloads_delete">Löschen</string>
+    <string name="downloads_no_app">Keine App zum Öffnen dieses Dateityps gefunden.</string>
+
+    <!-- Debug -->
+    <string name="debug_title">Cache &amp; Messwerte</string>
+    <string name="debug_stats">Anfragen gesamt %1$d · Cache-Treffer %2$d (%3$d %%) · Netzwerk %4$d · geblockt %5$d · aus dem Cache: %6$s</string>
+    <string name="debug_interceptor_toggle">Interceptor aktiv</string>
+    <string name="debug_clear_log">Log leeren</string>
+    <string name="debug_engine">Aktive Engine: %1$s</string>
+    <string name="debug_webview_version">Chromium/WebView: %1$s</string>
+    <string name="debug_timing">Letzter Seitenladen: %1$d ms (Start → fertig)</string>
+</resources>
