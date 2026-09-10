@@ -5,6 +5,13 @@ Arbeitsumgebung nicht kompiliert — erster Build läuft lokal oder in CI.**
 
 Eigenständiges Teilprojekt in diesem Repository, unabhängig vom Python-Projekt `qoder-creator` im Root.
 
+## Ausführliche Übergabe / Review
+
+Für die vollständige Übergabe mit Projektstatus, Review-Reihenfolge, Workflow-Patch, Risiken,
+Abnahmestand und nächsten Schritten siehe:
+
+- [`README-HANDOFF.md`](README-HANDOFF.md)
+
 ## Was die App kann (soll)
 
 `console.cloud.google.com` in einem eingebetteten Chromium (Android WebView) — mit einem **eigenen,
